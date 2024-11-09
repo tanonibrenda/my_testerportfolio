@@ -147,25 +147,39 @@ b, strong {
 	color: $main-color;
 }
 
-.animated-item {
-    font-size: 32px;
-    line-height: inherit;
-    display: block;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    animation: BottomTotop 6s linear infinite 0s;
-    &:nth-child(2n+2) {
-        animation-delay: 2s;
-    }
-    &:nth-child(3n+3) {
-        animation-delay: 4s;
-    }
-}
 
+.animated-item {
+	font-size: 32px;
+	line-height: inherit;
+	display: block;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	animation: BottomTotop 8s linear infinite 0s;
+}
+.animated-item:nth-child(2n+2) {
+	animation-delay: 4s;
+}
+.animated-item:nth-child(3n+3) {
+	animation-delay: 8s;
+}
+@keyframes BottomTotop {
+	0% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+}
 @keyframes BottomTotop {
     0% { opacity: 0; }
     5% { opacity: 0; transform: translateY(5px); }
